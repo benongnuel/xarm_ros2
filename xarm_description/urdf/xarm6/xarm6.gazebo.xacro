@@ -31,6 +31,8 @@
       <selfCollide>true</selfCollide>
     </gazebo>
 
+    
+
   </xacro:macro>
 
 </robot>

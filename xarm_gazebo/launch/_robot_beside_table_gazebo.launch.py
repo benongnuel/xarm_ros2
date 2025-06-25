@@ -28,7 +28,7 @@ def launch_setup(context, *args, **kwargs):
     hw_ns = LaunchConfiguration('hw_ns', default='xarm')
     limited = LaunchConfiguration('limited', default=False)
     effort_control = LaunchConfiguration('effort_control', default=False)
-    velocity_control = LaunchConfiguration('velocity_control', default=False)
+    velocity_control = LaunchConfiguration('velocity_control', default=True)
     add_gripper = LaunchConfiguration('add_gripper', default=False)
     add_vacuum_gripper = LaunchConfiguration('add_vacuum_gripper', default=False)
     add_bio_gripper = LaunchConfiguration('add_bio_gripper', default=False)
@@ -40,7 +40,7 @@ def launch_setup(context, *args, **kwargs):
     add_d435i_links = LaunchConfiguration('add_d435i_links', default=True)
     model1300 = LaunchConfiguration('model1300', default=False)
     robot_sn = LaunchConfiguration('robot_sn', default='')
-    attach_to = LaunchConfiguration('attach_to', default='world')
+    attach_to = LaunchConfiguration('attach_to', default='world') #should this be 'base_link'?
     attach_xyz = LaunchConfiguration('attach_xyz', default='"0 0 0"')
     attach_rpy = LaunchConfiguration('attach_rpy', default='"0 0 0"')
 
@@ -139,7 +139,7 @@ def launch_setup(context, *args, **kwargs):
 
     # gazebo launch
     # gazebo_ros/launch/gazebo.launch.py
-    xarm_gazebo_world = PathJoinSubstitution([FindPackageShare('xarm_gazebo'), 'worlds', 'table.world'])
+    xarm_gazebo_world = PathJoinSubstitution([FindPackageShare('xarm_gazebo'), 'worlds', 'aircraft_sheet.world'])
     gazebo_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(PathJoinSubstitution([FindPackageShare('gazebo_ros'), 'launch', 'gazebo.launch.py'])),
         launch_arguments={
@@ -158,10 +158,10 @@ def launch_setup(context, *args, **kwargs):
             '-topic', 'robot_description',
             # '-entity', '{}'.format(xarm_type),
             '-entity', 'UF_ROBOT',
-            '-x', '-0.2',
-            '-y', '-0.54' if robot_type.perform(context) == 'uf850' else '-0.5',
-            '-z', '1.021',
-            '-Y', '1.571',
+            '-x', '0',
+            '-y', '0', #if robot_type.perform(context) == 'uf850' else '-0.5',
+            '-z', '0', #for table height 1.015
+            '-Y', '0',  # yaw
         ],
         parameters=[{'use_sim_time': True}],
     )
@@ -195,6 +195,7 @@ def launch_setup(context, *args, **kwargs):
     controllers = [
         'joint_state_broadcaster',
         '{}{}_traj_controller'.format(prefix.perform(context), xarm_type),
+        #'{}_velocity_controller'.format(xarm_type),  # Add this line
     ]
     if robot_type.perform(context) != 'lite' and add_gripper.perform(context) in ('True', 'true'):
         controllers.append('{}{}_gripper_traj_controller'.format(prefix.perform(context), robot_type.perform(context)))

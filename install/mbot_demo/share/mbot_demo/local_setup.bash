@@ -1,0 +1,1 @@
+/home/benongnuel/dev_ws/src/xarm_ros2/build/mbot_demo/ament_cmake_environment_hooks/local_setup.bash

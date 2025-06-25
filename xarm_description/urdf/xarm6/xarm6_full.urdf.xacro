@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="xarm6">
+  <xacro:include filename="/home/benongnuel/dev_ws/src/xarm_ros2/xarm_description/urdf/xarm6/xarm6.urdf.xacro"/>
+  <xacro:include filename="/home/benongnuel/dev_ws/src/xarm_ros2/xarm_description/urdf/common/common.link.xacro"/>
+  <xacro:property name="use_xacro_load_yaml" value="false"/>
+  <xacro:property name="kinematics_params_filename" value="/home/benongnuel/dev_ws/src/xarm_ros2/xarm_description/urdf/xarm6/dummy_kinematics.yaml"/>
+  <xacro:property name="inertial_params_filename" value="/home/benongnuel/dev_ws/src/xarm_ros2/xarm_description/urdf/xarm6/dummy_inertial.yaml"/>
+  <xacro:property name="mesh_path" value="../meshes"/>
+  <xacro:property name="visual_dir" value="xarm6/visual"/>
+  <xacro:property name="collision_dir" value="xarm6/visual"/>
+  <xacro:property name="mesh_suffix" value="stl"/>
+  <xacro:xarm6_urdf prefix=""/>
+</robot>

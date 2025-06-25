@@ -1,0 +1,1 @@
+/home/benongnuel/dev_ws/src/xarm_ros2/build/xarm_msgs/rosidl_cmake/srv/GripperMove_Response.msg

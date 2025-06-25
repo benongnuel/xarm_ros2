@@ -52,7 +52,7 @@
       <parent link="${prefix}xarm_gripper_base_link" />
       <child link="${prefix}left_outer_knuckle" />
       <axis xyz="1 0 0" />
-      <limit lower="0" upper="0.85" effort="50" velocity="2" />
+      <limit lower="0" upper="0.85" effort="10" velocity="2" />
     </joint>
     <link name="${prefix}left_finger">
       <inertial>
@@ -77,7 +77,7 @@
       <parent link="${prefix}left_outer_knuckle" />
       <child link="${prefix}left_finger" />
       <axis xyz="-1 0 0" />
-      <limit lower="0" upper="0.85" effort="50" velocity="2" />
+      <limit lower="0" upper="0.85" effort="10" velocity="2" />
       <mimic joint="${prefix}drive_joint" multiplier="1" offset="0" />
     </joint>
     <link name="${prefix}left_inner_knuckle">
@@ -103,7 +103,7 @@
       <parent link="${prefix}xarm_gripper_base_link" />
       <child link="${prefix}left_inner_knuckle" />
       <axis xyz="1 0 0" />
-      <limit lower="0" upper="0.85" effort="50" velocity="2" />
+      <limit lower="0" upper="0.85" effort="10" velocity="2" />
       <mimic joint="${prefix}drive_joint" multiplier="1" offset="0" />
     </joint>
     <link name="${prefix}right_outer_knuckle">
@@ -129,7 +129,7 @@
       <parent link="${prefix}xarm_gripper_base_link" />
       <child link="${prefix}right_outer_knuckle" />
       <axis xyz="-1 0 0" />
-      <limit lower="0" upper="0.85" effort="50" velocity="2" />
+      <limit lower="0" upper="0.85" effort="10" velocity="2" />
       <mimic joint="${prefix}drive_joint" multiplier="1" offset="0" />
     </joint>
     <link name="${prefix}right_finger">
@@ -155,7 +155,7 @@
       <parent link="${prefix}right_outer_knuckle" />
       <child link="${prefix}right_finger" />
       <axis xyz="1 0 0" />
-      <limit lower="0" upper="0.85" effort="50" velocity="2" />
+      <limit lower="0" upper="0.85" effort="10" velocity="2" />
       <mimic joint="${prefix}drive_joint" multiplier="1" offset="0" />
     </joint>
     <link name="${prefix}right_inner_knuckle">
@@ -181,7 +181,7 @@
       <parent link="${prefix}xarm_gripper_base_link" />
       <child link="${prefix}right_inner_knuckle" />
       <axis xyz="-1 0 0" />
-      <limit lower="0" upper="0.85" effort="50" velocity="2" />
+      <limit lower="0" upper="0.85" effort="10" velocity="2" />
       <mimic joint="${prefix}drive_joint" multiplier="1" offset="0" />
     </joint>
 
@@ -194,5 +194,68 @@
     </joint>
 
   </xacro:macro>
+
+<gazebo reference="${prefix}left_finger">
+  <mu1>50.0</mu1>
+  <mu2>50.0</mu2>
+  <kp>0</kp>
+  <kd>0</kd>
+  <soft_cfm>0.001</soft_cfm>
+  <soft_erp>0.8</soft_erp>
+  <max_vel>0.05</max_vel>
+  <min_depth>0.001</min_depth>
+</gazebo>
+<gazebo reference="${prefix}right_finger">
+  <mu1>50.0</mu1>
+  <mu2>50.0</mu2>
+  <kp>0</kp>
+  <kd>0</kd>
+  <soft_cfm>0.001</soft_cfm>
+  <soft_erp>0.8</soft_erp>
+  <max_vel>0.05</max_vel>
+  <min_depth>0.001</min_depth>
+</gazebo>
+<gazebo reference="${prefix}left_outer_knuckle">
+  <mu1>50.0</mu1>
+  <mu2>50.0</mu2>
+  <kp>0</kp>
+  <kd>0</kd>
+  <soft_cfm>0.001</soft_cfm>
+  <soft_erp>0.8</soft_erp>
+  <max_vel>0.05</max_vel>
+  <min_depth>0.001</min_depth>
+</gazebo>
+<gazebo reference="${prefix}right_outer_knuckle">
+  <mu1>50.0</mu1>
+  <mu2>50.0</mu2>
+  <kp>0</kp>
+  <kd>0</kd>
+  <soft_cfm>0.001</soft_cfm>
+  <soft_erp>0.8</soft_erp>
+  <max_vel>0.05</max_vel>
+  <min_depth>0.001</min_depth>
+</gazebo>
+<gazebo reference="${prefix}left_inner_knuckle">
+  <mu1>50.0</mu1>
+  <mu2>50.0</mu2>
+  <kp>0</kp>
+  <kd>0</kd>
+  <soft_cfm>0.001</soft_cfm>
+  <soft_erp>0.8</soft_erp>
+  <max_vel>0.05</max_vel>
+  <min_depth>0.001</min_depth>
+</gazebo>
+<gazebo reference="${prefix}right_inner_knuckle">
+  <mu1>50.0</mu1>
+  <mu2>50.0</mu2>
+  <kp>0</kp>
+  <kd>0</kd>
+  <soft_cfm>0.001</soft_cfm>
+  <soft_erp>0.8</soft_erp>
+  <max_vel>0.05</max_vel>
+  <min_depth>0.001</min_depth>
+</gazebo>
+
+
 
 </robot>

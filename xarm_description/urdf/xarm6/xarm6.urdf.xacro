@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://ros.org/wiki/xacro">
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="xarm6">
   <xacro:macro name="xarm6_urdf" params="prefix
     joint1_lower_limit:=${-2.0*pi}  joint1_upper_limit:=${2.0*pi}
     joint2_lower_limit:=${-2.059}  joint2_upper_limit:=${2.0944}
@@ -90,6 +90,13 @@
         origin_xyz="0 0 0" 
         origin_rpy="0 0 0" />
     </link>
+
+    <!-- Attach base link to world with zero rotation -->
+    <!--<joint name="world_to_base" type="fixed">
+      <parent link="world"/>
+      <child link="link_base"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint>-->
 
     <joint name="${prefix}joint1" type="revolute">
       <parent link="${prefix}link_base"/>
@@ -259,12 +266,12 @@
       <dynamics damping="1.0" friction="1.0"/>
     </joint>
 
-    <!-- <link name="${prefix}link_eef" />
+    <!--<link name="${prefix}link_eef" />
     <joint name="${prefix}joint_eef" type="fixed">
       <origin xyz="0 0 0" rpy="0 0 0" />
       <parent link="${prefix}link6" />
       <child link="${prefix}link_eef" />
-    </joint> -->
+    </joint>-->
   
   </xacro:macro>
 </robot>

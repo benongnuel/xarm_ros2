@@ -1,0 +1,1 @@
+/home/benongnuel/dev_ws/src/xarm_ros2/build/xarm_msgs/ament_cmake_python/xarm_msgs/xarm_msgs.egg-info/SOURCES.txt
