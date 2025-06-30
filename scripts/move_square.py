@@ -32,7 +32,7 @@ def main(args=None):
     mover_client = SquareMover()
     
     # --- DEFINE THE NEW POSITION FOR THE SQUARE HERE ---
-    new_x, new_y, new_z = 0.20, 0.0, 0.975
+    new_x, new_y, new_z = 0.30, 0.0, 0.975
     
     mover_client.move_square(new_x, new_y, new_z)
     mover_client.destroy_node()

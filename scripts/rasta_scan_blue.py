@@ -22,12 +22,7 @@ class BlueSquareSweep(Node):
         self._action_client = ActionClient(self, MoveGroup, 'move_action')
         self.create_subscription(PoseStamped, '/blue_square_pose', self.square_cb, 10)
         self.sweep_waypoints = [
-            (-0.4, -0.15, 0.60),
-            (-0.4,  0.15, 0.60),
-            ( 0.0,  0.15, 0.60),
-            ( 0.4,  0.15, 0.60),
-            ( 0.4, -0.15, 0.60),
-            ( 0.0, -0.15, 0.60),
+            (-0.15, 0.0, 0.88),
         ]
         self.sweep_idx = 0
         self.timer = self.create_timer(4.0, self.sweep_motion)
@@ -66,125 +61,23 @@ class BlueSquareSweep(Node):
 
     def square_cb(self, msg):
         if self.busy:
-            return  # Ignore all vision while busy with approach
+            return  # Ignore if already moving
 
-        target_frame = 'link_base'
-        pose_in_base = PoseStamped()
-        try:
-            if msg.header.frame_id != target_frame:
-                from tf2_ros import LookupException, ConnectivityException, ExtrapolationException, TransformException
-                for _ in range(20):
-                    try:
-                        pose_in_base = self.tf_buffer.transform(msg, target_frame, timeout=rclpy.duration.Duration(seconds=0.1))
-                        break
-                    except (LookupException, ConnectivityException, ExtrapolationException, TransformException):
-                        time.sleep(0.1)
-                else:
-                    self.get_logger().warn(f"TF transform from {msg.header.frame_id} to {target_frame} not available after retries.")
-                    return
-            else:
-                pose_in_base = msg
-        except Exception as e:
-            self.get_logger().warn(f"TF transform failed: {e}")
-            return
-
-        # Check if this square is already visited
-        for sq in self.visited_squares:
-            dist = np.linalg.norm([
-                pose_in_base.pose.position.x - sq[0],
-                pose_in_base.pose.position.y - sq[1],
-                pose_in_base.pose.position.z - sq[2]
-            ])
-            if dist < 0.05:  # 5cm tolerance
-                return  # Already visited, ignore
-
-        try:
-            trans = self.tf_buffer.lookup_transform(
-                target_frame, 'link_eef', rclpy.time.Time(), timeout=rclpy.duration.Duration(seconds=0.1))
-            ee_pos = trans.transform.translation
-            self.get_logger().info(
-                f"Detected square at ({pose_in_base.pose.position.x:.3f}, {pose_in_base.pose.position.y:.3f}, {pose_in_base.pose.position.z:.3f})"
-            )
-            self.get_logger().info(
-                f"End effector at ({ee_pos.x:.3f}, {ee_pos.y:.3f}, {ee_pos.z:.3f})"
-            )
-            ee_dist = np.linalg.norm([
-                pose_in_base.pose.position.x - ee_pos.x,
-                pose_in_base.pose.position.y - ee_pos.y,
-                pose_in_base.pose.position.z - ee_pos.z
-            ])
-            self.get_logger().info(f"EE distance to square: {ee_dist:.3f} m")
-
-            # Lock the pose and approach if in range
-            if ee_dist < 0.20:
-                self.locked_square_pose = pose_in_base
-                self.get_logger().info("Locked square pose for approach.")
-                self.visited_squares.append([
-                    pose_in_base.pose.position.x,
-                    pose_in_base.pose.position.y,
-                    pose_in_base.pose.position.z
-                ])
-                self.busy = True
-                self.last_square_pose = pose_in_base
-                self.get_logger().info("Within 20cm of square, starting blind incremental approach.")
-                self.move_blind_until_contact(steps=3, step_size=0.05)
-                return
-
-        except Exception as e:
-            self.get_logger().warn(f"TF lookup failed: {e}")
-
-    def move_blind_until_contact(self, steps=10, step_size=0.01):
-        from copy import deepcopy
-
-        pose = deepcopy(self.last_square_pose)
+        # Always move to the fixed blue square pose
+        target_pose = PoseStamped()
+        target_pose.header.frame_id = 'link_base'
+        target_pose.pose.position.x = -0.25
+        target_pose.pose.position.y = 0.0
+        target_pose.pose.position.z = 0.95
         quat = orientation_quat()
-        pose.pose.orientation.x = quat[0]
-        pose.pose.orientation.y = quat[1]
-        pose.pose.orientation.z = quat[2]
-        pose.pose.orientation.w = quat[3]
+        target_pose.pose.orientation.x = quat[0]
+        target_pose.pose.orientation.y = quat[1]
+        target_pose.pose.orientation.z = quat[2]
+        target_pose.pose.orientation.w = quat[3]
 
-        for i in range(steps):
-            pose.pose.position.z += step_size
-            self.get_logger().info(f"Blind step {i+1}/{steps}: Moving up by {step_size*100:.1f} cm")
-            self.send_pose_goal(pose)
-            time.sleep(1.0)
-
-        self.get_logger().info("Blind approach finished, holding for 10 seconds.")
-        if self.hold_timer:
-            self.hold_timer.cancel()
-        self.hold_timer = self.create_timer(10.0, self.reset_state)
-
-        try:
-            trans = self.tf_buffer.lookup_transform(
-                'link_base', 'link_eef', rclpy.time.Time(), timeout=rclpy.duration.Duration(seconds=0.1))
-            ee_pos = trans.transform.translation
-            target = self.last_square_pose.pose.position
-
-            self.get_logger().info(f"EE frame: link_eef in link_base: ({ee_pos.x:.3f}, {ee_pos.y:.3f}, {ee_pos.z:.3f})")
-            self.get_logger().info(f"Target frame: ({target.x:.3f}, {target.y:.3f}, {target.z:.3f})")
-
-            xy_offset = np.linalg.norm([
-                target.x - ee_pos.x,
-                target.y - ee_pos.y
-            ])
-            z_offset = abs(target.z - ee_pos.z)
-            xyz_offset = np.linalg.norm([
-                target.x - ee_pos.x,
-                target.y - ee_pos.y,
-                target.z - ee_pos.z
-            ])
-            self.get_logger().info(
-                f"Alignment after approach: XY offset = {xy_offset*100:.1f} cm, Z offset = {z_offset*100:.1f} cm, XYZ distance = {xyz_offset*100:.1f} cm"
-            )
-            # --- Final position log like PBVS ---
-            self.get_logger().info(
-                f"Final position: x={ee_pos.x:.3f}, y={ee_pos.y:.3f}, z={ee_pos.z:.3f}"
-            )
-            self.get_logger().info(
-                f"Target position: x={target.x:.3f}, y={target.y:.3f}, z={target.z:.3f}"
-            )
-        except Exception as e:
-            self.get_logger().warn(f"TF lookup failed after approach: {e}")
+        self.get_logger().info("Blue square detected! Moving to fixed pose (-0.25, 0, 0.97)")
+        self.busy = True
+        self.send_pose_goal(target_pose)
 
     def reset_state(self):
         self.get_logger().info("Hold finished, resuming sweep and unlocking pose.")
@@ -232,9 +125,9 @@ class BlueSquareSweep(Node):
         ori_constraint.header = pose.header
         ori_constraint.link_name = 'link_eef'
         ori_constraint.orientation = pose.pose.orientation
-        ori_constraint.absolute_x_axis_tolerance = 0.1
-        ori_constraint.absolute_y_axis_tolerance = 0.1
-        ori_constraint.absolute_z_axis_tolerance = 0.1
+        ori_constraint.absolute_x_axis_tolerance = 0.3
+        ori_constraint.absolute_y_axis_tolerance = 0.3
+        ori_constraint.absolute_z_axis_tolerance = 3.14
         ori_constraint.weight = 1.0
         req.goal_constraints[0].orientation_constraints.append(ori_constraint)
 

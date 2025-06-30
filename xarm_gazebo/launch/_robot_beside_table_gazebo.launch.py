@@ -58,7 +58,7 @@ def launch_setup(context, *args, **kwargs):
     geometry_mesh_tcp_rpy = LaunchConfiguration('geometry_mesh_tcp_rpy', default='"0 0 0"')
     kinematics_suffix = LaunchConfiguration('kinematics_suffix', default='')
     
-    load_controller = LaunchConfiguration('load_controller', default=False)
+    load_controller = LaunchConfiguration('load_controller', default=True)
     show_rviz = LaunchConfiguration('show_rviz', default=False)
     no_gui_ctrl = LaunchConfiguration('no_gui_ctrl', default=False)
 

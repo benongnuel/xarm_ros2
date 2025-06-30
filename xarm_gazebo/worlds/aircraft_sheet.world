@@ -45,7 +45,7 @@
     <!-- FIX: Create a separate, movable model for the blue square -->
     <model name="blue_square">
       <!-- Initial position matches the old visual's position -->
-      <pose>-0.25 0 0.97 0 0 0</pose>
+      <pose>-0.15 0 0.97 0 0 0</pose>
       <static>false</static>
       <link name="link">
         <kinematic>true</kinematic>
@@ -74,7 +74,7 @@
    
 
     <model name="sphere">
-      <pose>-0.5 -0.5 0.5 0 0 0</pose>
+      <pose>-0.3 -0.3 0.3 0 0 0</pose>
       <link name="link">
         <inertial>
           <mass>0.2</mass>
@@ -101,7 +101,7 @@
     </model>
 
     <model name="sphere2">
-      <pose>0.5 0.5 0.5 0 0 0</pose>
+      <pose>0.3 0.3 0.25 0 0 0</pose>
       <link name="link">
         <inertial>
           <mass>0.2</mass>
@@ -127,7 +127,7 @@
       </link>
     </model>
 
-    <model name="sphere3">
+    <!--<model name="sphere3">
       <pose>0.35 -0.45 0.5 0 0 0</pose>
       <link name="link">
         <inertial>
@@ -152,7 +152,7 @@
           </material>
         </visual>
       </link>
-    </model>
+    </model>-->
 
     <physics type="ode">
       <max_step_size>0.001</max_step_size>

@@ -28,7 +28,7 @@ def launch_setup(context, *args, **kwargs):
     baud_checkset = LaunchConfiguration('baud_checkset', default=True)
     default_gripper_baud = LaunchConfiguration('default_gripper_baud', default=2000000)
     
-    dof = LaunchConfiguration('dof', default=7)
+    dof = LaunchConfiguration('dof', default=6)
     robot_type = LaunchConfiguration('robot_type', default='xarm')
     prefix = LaunchConfiguration('prefix', default='')
     hw_ns = LaunchConfiguration('hw_ns', default='xarm')

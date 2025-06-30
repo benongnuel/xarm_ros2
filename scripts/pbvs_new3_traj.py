@@ -19,6 +19,8 @@ from tf2_geometry_msgs import do_transform_pose
 def orientation_quat():
     return tf_transformations.quaternion_from_euler(0, 0, np.pi)
 
+CEILING_SAFE_OFFSET = 0.05  # 5cm below blue square/ceiling
+
 class BlueSquarePbvs(Node):
     def __init__(self):
         super().__init__('blue_square_pbvs')
@@ -26,7 +28,7 @@ class BlueSquarePbvs(Node):
         self.create_subscription(PoseStamped, '/blue_square_pose', self.square_cb, 10)
         
         self.sweep_waypoints = [
-            (-0.35, -0.15, 0.60), (-0.35,  0.15, 0.60),  # Z=0.60 for ceiling scanning
+            (-0.35, -0.15, 0.60), (-0.35,  0.15, 0.60),
             ( 0.0,  0.15, 0.60), ( 0.35,  0.15, 0.60),
             ( 0.35, -0.15, 0.60), ( 0.0, -0.15, 0.60),
         ]
@@ -37,8 +39,8 @@ class BlueSquarePbvs(Node):
         self.pbvs_target_pose = None
         self.pbvs_iter = 0
         self.pbvs_max_iters = 20
-        self.current_goal_handle = None  # Added for motion cancellation
-        self.last_target_update_time = None  # Track when we last got target updates
+        self.current_goal_handle = None
+        self.last_target_update_time = None
 
         self.tf_buffer = Buffer()
         self.tf_listener = TransformListener(self.tf_buffer, self, spin_thread=True)
@@ -49,7 +51,6 @@ class BlueSquarePbvs(Node):
         
         self.init_timer = self.create_timer(1.0, self.initial_start_callback)
         self.get_logger().info("Blue Square PBVS Node created. Initializing...")
-        
         
     def initial_start_callback(self):
         self.init_timer.cancel()
@@ -96,37 +97,30 @@ class BlueSquarePbvs(Node):
             self.get_logger().error(f"Could not transform pose: {e}")
             return
         
-        # ALWAYS update the last target update time when we receive a callback
         self.last_target_update_time = self.get_clock().now()
         
         if self.busy:
-            # Calculate how much target moved
             if self.pbvs_target_pose is not None:
                 old_pos = self.pbvs_target_pose.pose.position
                 new_pos = transformed_pose.pose.position
                 distance_moved = np.linalg.norm([new_pos.x - old_pos.x, new_pos.y - old_pos.y])
-                # If target moved significantly, cancel current motion and replan
-                if distance_moved > 0.20:  # 20cm threshold
+                if distance_moved > 0.20:
                     self.get_logger().info(f"Target moved {distance_moved*100:.1f}cm - cancelling current motion")
                     if self.current_goal_handle:
                         self.current_goal_handle.cancel_goal_async()
             
-            # Always update target position
             self.pbvs_target_pose = transformed_pose
             self.get_logger().info("PBVS target updated mid-flight.")
             return
 
-        # Check if too close to visited squares
         for i, sq in enumerate(self.visited_squares):
             dist = np.linalg.norm([transformed_pose.pose.position.x - sq[0], transformed_pose.pose.position.y - sq[1]])
-            if dist < 0.15:  # Increased exclusion zone to 25cm
+            if dist < 0.15:
                 self.get_logger().info(f"Skipping square - too close to visited square {i+1} (distance: {dist*100:.1f}cm)")
                 return
 
         self.busy = True
         self.get_logger().info("New blue square detected! Stopping sweep and starting PBVS.")
-        
-        # DON'T add to visited squares here - only add when successfully reached
         self.pbvs_target_pose = transformed_pose
         self.pbvs_iter = 0
         self.pbvs_step()
@@ -149,12 +143,10 @@ class BlueSquarePbvs(Node):
 
     def sweep_loop_done_callback(self, success):
         if success:
-            self.create_timer(1.0, self.sweep_loop)  # Small pause for vision
+            self.create_timer(1.0, self.sweep_loop)
         else:
             self.get_logger().error("A sweep motion failed. Retrying loop in 5 seconds.")
             self.create_timer(5.0, self.sweep_loop)
-
-    # ...existing code...
 
     def pbvs_step(self):
         if self.pbvs_iter >= self.pbvs_max_iters:
@@ -163,12 +155,10 @@ class BlueSquarePbvs(Node):
             return
 
         try:
-            # **ENHANCED TIMEOUT CHECK** - distance-based timeout
             if self.last_target_update_time is not None:
                 time_since_last_sighting = self.get_clock().now() - self.last_target_update_time
                 timeout_seconds = time_since_last_sighting.nanoseconds / 1e9
                 
-                # Get current robot position to determine appropriate timeout
                 try:
                     trans = self.tf_buffer.lookup_transform('link_base', 'link_eef', rclpy.time.Time())
                     ee_pos = trans.transform.translation
@@ -179,19 +169,17 @@ class BlueSquarePbvs(Node):
                         target.z - ee_pos.z
                     ])
                     
-                    # **DISTANCE-BASED TIMEOUT THRESHOLDS**
-                    if distance_to_target < 0.15:  # Very close - vision likely failed due to depth issues
-                        timeout_threshold = 10.0  # 10 seconds - very tolerant
+                    if distance_to_target < 0.15:
+                        timeout_threshold = 20.0
                         if self.pbvs_iter > 3 and timeout_seconds > timeout_threshold:
                             self.get_logger().info(f"Close range timeout ({timeout_seconds:.1f}s) - assuming target reached")
-                            # Mark as successfully reached since we're so close
                             pos = self.pbvs_target_pose.pose.position
                             self.visited_squares.append([pos.x, pos.y])
                             self.get_logger().info(f"Square marked as visited (close range). Total: {len(self.visited_squares)}")
                             self.create_timer(3.0, self.reset_state)
                             return
-                    elif distance_to_target < 0.25:  # Medium close
-                        timeout_threshold = 6.0  # 6 seconds
+                    elif distance_to_target < 0.25:
+                        timeout_threshold = 12.0
                         if self.pbvs_iter > 3 and timeout_seconds > timeout_threshold:
                             self.get_logger().info(f"Medium range timeout ({timeout_seconds:.1f}s) - assuming target reached")
                             pos = self.pbvs_target_pose.pose.position
@@ -199,7 +187,7 @@ class BlueSquarePbvs(Node):
                             self.get_logger().info(f"Square marked as visited (medium range). Total: {len(self.visited_squares)}")
                             self.create_timer(3.0, self.reset_state)
                             return
-                    else:  # Far range - normal timeout
+                    else:
                         timeout_threshold = 4.0
                         if self.pbvs_iter > 5 and timeout_seconds > timeout_threshold:
                             self.get_logger().warn(f"Target lost (no update in >{timeout_seconds:.1f}s). Aborting servo.")
@@ -207,14 +195,14 @@ class BlueSquarePbvs(Node):
                             return
                             
                 except Exception as e:
-                    # Fallback to normal timeout if can't get position
                     if self.pbvs_iter > 5 and timeout_seconds > 4.0:
                         self.get_logger().warn(f"Target lost (no update in >{timeout_seconds:.1f}s). Aborting servo.")
                         self.reset_state()
                         return
 
             target = self.pbvs_target_pose.pose.position
-            target_z_eef = min(target.z - 0.01, 0.98)  # Offset to ensure we are above the target
+            # Clamp Z to 5cm below the blue square
+            target_z_eef = min(target.z - 0.01, target.z - CEILING_SAFE_OFFSET)
             trans = self.tf_buffer.lookup_transform('link_base', 'link_eef', rclpy.time.Time())
             ee_pos = trans.transform.translation
             
@@ -224,32 +212,18 @@ class BlueSquarePbvs(Node):
 
             self.get_logger().info(f"[PBVS {self.pbvs_iter+1}/{self.pbvs_max_iters}] XY_err: {xy_err*100:.1f} cm, Z_err: {z_err*100:.1f} cm, Dist: {distance_to_target*100:.1f} cm")
 
-            # --- Diagnostic logging block ---
-            self.get_logger().info(
-                f"Target pose: x={target.x:.4f}, y={target.y:.4f}, z={target_z_eef:.4f}"
-            )
-            self.get_logger().info(
-                f"EE pose:     x={ee_pos.x:.4f}, y={ee_pos.y:.4f}, z={ee_pos.z:.4f}"
-            )
-            self.get_logger().info(
-                f"Delta:       dx={target.x - ee_pos.x:.4f}, dy={target.y - ee_pos.y:.4f}, dz={target_z_eef - ee_pos.z:.4f}"
-            )
-            # --- End diagnostic logging block ---
-
-            # **ADAPTIVE CONVERGENCE** - tighter when close
-            if distance_to_target < 0.20:  # Close range
-                xy_threshold = 0.015  # 1.5cm
-                z_threshold = 0.015   # 1.5cm
-            else:  # Far range
-                xy_threshold = 0.02   # 2cm
-                z_threshold = 0.02    # 2cm
+            if distance_to_target < 0.20:
+                xy_threshold = 0.015
+                z_threshold = 0.015
+            else:
+                xy_threshold = 0.02
+                z_threshold = 0.02
 
             if xy_err < xy_threshold and abs(z_err) < z_threshold:
-                self.get_logger().info("Target reached! PBVS complete.")
-                # Mark as successfully reached
+                self.get_logger().info("Target reached. PBVS complete.")
                 pos = self.pbvs_target_pose.pose.position
                 self.visited_squares.append([pos.x, pos.y])
-                self.get_logger().info(f"Square successfully visited! Total: {len(self.visited_squares)}")
+                self.get_logger().info(f"Square successfully visited. Total: {len(self.visited_squares)}")
                 self.create_timer(3.0, self.reset_state)
                 return
 
@@ -258,95 +232,35 @@ class BlueSquarePbvs(Node):
             quat = orientation_quat()
             next_pose.pose.orientation.x, next_pose.pose.orientation.y, next_pose.pose.orientation.z, next_pose.pose.orientation.w = quat
 
-            # **IMPROVED STEP SIZING** based on distance
-            if distance_to_target < 0.20:  # Close range - smaller steps
-                max_xy_step = 0.03  # 3cm max
-                max_z_step = 0.02   # 2cm max
-            else:  # Far range - normal steps
-                max_xy_step = 0.05  # 5cm max
-                max_z_step = 0.08   # 8cm max
+            # Smaller steps when close
+            if distance_to_target < 0.05:
+                max_xy_step = 0.01
+                max_z_step = 0.01
+            elif distance_to_target < 0.20:
+                max_xy_step = 0.03
+                max_z_step = 0.02
+            else:
+                max_xy_step = 0.05
+                max_z_step = 0.08
 
             if xy_err > 0.03:
-                self.get_logger().info("Phase 1: Aligning in XY plane.")
                 step_size = min(max_xy_step, xy_err * 0.6)
                 xy_dir = [(target.x - ee_pos.x) / xy_err, (target.y - ee_pos.y) / xy_err]
-                
                 next_pose.pose.position.x = ee_pos.x + xy_dir[0] * step_size
                 next_pose.pose.position.y = ee_pos.y + xy_dir[1] * step_size
                 next_pose.pose.position.z = ee_pos.z
             else:
-                self.get_logger().info("Phase 2: Aligning in Z axis.")
                 step_size = min(max_z_step, abs(z_err) * 0.6)
                 z_step = np.sign(z_err) * step_size
-
                 next_pose.pose.position.x = target.x
                 next_pose.pose.position.y = target.y
                 next_pose.pose.position.z = ee_pos.z + z_step
 
-            self.pbvs_iter += 1
-            self.send_pose_goal_async(next_pose, self.pbvs_step_done_callback)
-            
-        except Exception as e:
-            self.get_logger().error(f"Exception in PBVS loop: {e}")
-            self.reset_state()
-
-            target = self.pbvs_target_pose.pose.position
-            target_z_eef = min(target.z - 0.01, 0.98)  # Offset to ensure we are above the target
-            trans = self.tf_buffer.lookup_transform('link_base', 'link_eef', rclpy.time.Time())
-            ee_pos = trans.transform.translation
-            
-            xy_err = np.linalg.norm([target.x - ee_pos.x, target.y - ee_pos.y])
-            z_err = target_z_eef - ee_pos.z
-            distance_to_target = np.linalg.norm([xy_err, z_err])
-
-            self.get_logger().info(f"[PBVS {self.pbvs_iter+1}/{self.pbvs_max_iters}] XY_err: {xy_err*100:.1f} cm, Z_err: {z_err*100:.1f} cm, Dist: {distance_to_target*100:.1f} cm")
-
-            # **ADAPTIVE CONVERGENCE** - tighter when close
-            if distance_to_target < 0.20:  # Close range
-                xy_threshold = 0.015  # 1.5cm
-                z_threshold = 0.015   # 1.5cm
-            else:  # Far range
-                xy_threshold = 0.02   # 2cm
-                z_threshold = 0.02    # 2cm
-
-            if xy_err < xy_threshold and abs(z_err) < z_threshold:
-                self.get_logger().info("Target reached! PBVS complete.")
-                # Mark as successfully reached
-                pos = self.pbvs_target_pose.pose.position
-                self.visited_squares.append([pos.x, pos.y])
-                self.get_logger().info(f"Square successfully visited! Total: {len(self.visited_squares)}")
-                self.create_timer(3.0, self.reset_state)
-                return
-
-            next_pose = PoseStamped()
-            next_pose.header.frame_id = 'link_base'
-            quat = orientation_quat()
-            next_pose.pose.orientation.x, next_pose.pose.orientation.y, next_pose.pose.orientation.z, next_pose.pose.orientation.w = quat
-
-            # **IMPROVED STEP SIZING** based on distance
-            if distance_to_target < 0.20:  # Close range - smaller steps
-                max_xy_step = 0.03  # 3cm max
-                max_z_step = 0.02   # 2cm max
-            else:  # Far range - normal steps
-                max_xy_step = 0.05  # 5cm max
-                max_z_step = 0.08   # 8cm max
-
-            if xy_err > 0.03:
-                self.get_logger().info("Phase 1: Aligning in XY plane.")
-                step_size = min(max_xy_step, xy_err * 0.6)
-                xy_dir = [(target.x - ee_pos.x) / xy_err, (target.y - ee_pos.y) / xy_err]
-                
-                next_pose.pose.position.x = ee_pos.x + xy_dir[0] * step_size
-                next_pose.pose.position.y = ee_pos.y + xy_dir[1] * step_size
-                next_pose.pose.position.z = ee_pos.z
-            else:
-                self.get_logger().info("Phase 2: Aligning in Z axis.")
-                step_size = min(max_z_step, abs(z_err) * 0.6)
-                z_step = np.sign(z_err) * step_size
-
-                next_pose.pose.position.x = target.x
-                next_pose.pose.position.y = target.y
-                next_pose.pose.position.z = ee_pos.z + z_step
+            # Clamp Z to safe value before sending
+            safe_z = target.z - CEILING_SAFE_OFFSET
+            if next_pose.pose.position.z > safe_z:
+                self.get_logger().warn(f"Clamping Z from {next_pose.pose.position.z:.3f} to {safe_z:.3f} to avoid ceiling collision.")
+                next_pose.pose.position.z = safe_z
 
             self.pbvs_iter += 1
             self.send_pose_goal_async(next_pose, self.pbvs_step_done_callback)
@@ -366,8 +280,8 @@ class BlueSquarePbvs(Node):
         self.get_logger().info(f"Reset complete. Total squares visited: {len(self.visited_squares)}. Resuming sweep in 3s.")
         self.busy = False
         self.pbvs_target_pose = None
-        self.current_goal_handle = None  # Clear goal handle
-        self.last_target_update_time = None  # Reset timeout tracking
+        self.current_goal_handle = None
+        self.last_target_update_time = None
         self.create_timer(3.0, self.sweep_loop)
 
     def send_pose_goal_async(self, pose_stamped, done_callback):
@@ -381,11 +295,10 @@ class BlueSquarePbvs(Node):
 
         constraints = Constraints()
         pos_constraint = PositionConstraint(header=pose_stamped.header, link_name='link_eef', weight=1.0)
-        pos_constraint.constraint_region.primitives.append(SolidPrimitive(type=SolidPrimitive.SPHERE, dimensions=[0.015]))  # Tighter tolerance
+        pos_constraint.constraint_region.primitives.append(SolidPrimitive(type=SolidPrimitive.SPHERE, dimensions=[0.025]))
         pos_constraint.constraint_region.primitive_poses.append(pose_stamped.pose)
         constraints.position_constraints.append(pos_constraint)
 
-        # Add orientation constraints for consistent scanning behavior
         ori_constraint = OrientationConstraint(header=pose_stamped.header, link_name='link_eef', orientation=pose_stamped.pose.orientation, weight=1.0)
         ori_constraint.absolute_x_axis_tolerance = 0.1
         ori_constraint.absolute_y_axis_tolerance = 0.1  
@@ -408,7 +321,7 @@ class BlueSquarePbvs(Node):
                 if done_callback: done_callback(False)
                 return
             
-            self.current_goal_handle = goal_handle  # Store for cancellation
+            self.current_goal_handle = goal_handle
             result_future = goal_handle.get_result_async()
             result_future.add_done_callback(lambda future: self.goal_result_callback(future, done_callback))
         except Exception as e:
@@ -416,13 +329,13 @@ class BlueSquarePbvs(Node):
             if done_callback: done_callback(False)
 
     def goal_result_callback(self, future, done_callback):
-        self.current_goal_handle = None  # Clear handle when done
+        self.current_goal_handle = None
         result = future.result()
         status = result.status
 
         if status == GoalStatus.STATUS_CANCELED:
             self.get_logger().info("Move step was cancelled, replanning to new target.")
-            self.pbvs_step()  # Immediately replan to new target
+            self.pbvs_step()
             return
 
         try:

@@ -32,7 +32,7 @@ class RedBall3DWorldFinder(Node):
         self.last_no_ball_log_time = self.get_clock().now().seconds_nanoseconds()[0]
 
         self.pose_pub = self.create_publisher(PoseStamped, '/red_ball_pose', 10)
-        self.timer = self.create_timer(1, self.process)
+        self.timer = self.create_timer(0.1, self.process)
 
     def caminfo_callback(self, msg):
         self.K = np.array(msg.k).reshape((3,3))
