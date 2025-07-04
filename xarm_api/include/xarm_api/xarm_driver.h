@@ -41,6 +41,9 @@ namespace xarm_api
 
         sensor_msgs::msg::JointState* get_joint_states();
 
+        /* only use in xarm_controller */
+        int update_joint_states(bool initialized = true, int flag = -1);
+
     private:
         void _report_connect_changed_callback(bool connected, bool reported);
         void _report_data_callback(XArmReportData *report_data_ptr);
@@ -52,7 +55,7 @@ namespace xarm_api
         rclcpp_action::CancelResponse _handle_xarm_gripper_action_cancel(const std::shared_ptr<rclcpp_action::ServerGoalHandle<control_msgs::action::GripperCommand>> goal_handle);
         void _handle_xarm_gripper_action_accepted(const std::shared_ptr<rclcpp_action::ServerGoalHandle<control_msgs::action::GripperCommand>> goal_handle);
         void _xarm_gripper_action_execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle<control_msgs::action::GripperCommand>> goal_handle);
-        void _pub_xarm_gripper_joint_states(float pos);
+        void _pub_xarm_gripper_joint_states(int pos);
 
         void _init_bio_gripper(void);
         inline float _bio_gripper_pos_convert(float pos, bool reversed = false);
@@ -60,7 +63,7 @@ namespace xarm_api
         rclcpp_action::CancelResponse _handle_bio_gripper_action_cancel(const std::shared_ptr<rclcpp_action::ServerGoalHandle<control_msgs::action::GripperCommand>> goal_handle);
         void _handle_bio_gripper_action_accepted(const std::shared_ptr<rclcpp_action::ServerGoalHandle<control_msgs::action::GripperCommand>> goal_handle);
         void _bio_gripper_action_execute(const std::shared_ptr<rclcpp_action::ServerGoalHandle<control_msgs::action::GripperCommand>> goal_handle);
-        void _pub_bio_gripper_joint_states(float pos);
+        void _pub_bio_gripper_joint_states(int pos);
 
         template<typename ServiceT, typename CallbackT>
     	typename rclcpp::Service<ServiceT>::SharedPtr _create_service(const std::string & service_name, CallbackT && callback);
@@ -82,7 +85,8 @@ namespace xarm_api
         rclcpp::Node::SharedPtr hw_node_;
 
         int dof_;
-        int joint_states_rate_;
+        int joint_state_rate_;
+        int joint_state_flags_;
         bool in_ros_control_;
         int vacuum_gripper_hardware_version_;
         std::string report_type_;
