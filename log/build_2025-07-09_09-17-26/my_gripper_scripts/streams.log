@@ -1,0 +1,32 @@
+[0.657s] Invoking command in '/home/benongnuel/dev_ws/build/my_gripper_scripts': PYTHONPATH=/home/benongnuel/dev_ws/build/my_gripper_scripts/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/benongnuel/dev_ws/build/my_gripper_scripts/build
+[0.827s] running develop
+[0.903s] Removing /home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages/my-gripper-scripts.egg-link (link to .)
+[0.920s] Invoked command in '/home/benongnuel/dev_ws/build/my_gripper_scripts' returned '0': PYTHONPATH=/home/benongnuel/dev_ws/build/my_gripper_scripts/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/benongnuel/dev_ws/build/my_gripper_scripts/build
+[0.922s] Invoking command in '/home/benongnuel/dev_ws/my_gripper_scripts': PYTHONPATH=/home/benongnuel/dev_ws/build/my_gripper_scripts/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/my_gripper_scripts build --build-base /home/benongnuel/dev_ws/build/my_gripper_scripts/build install --record /home/benongnuel/dev_ws/build/my_gripper_scripts/install.log --single-version-externally-managed install_data --force
+[1.092s] running egg_info
+[1.092s] writing ../build/my_gripper_scripts/my_gripper_scripts.egg-info/PKG-INFO
+[1.092s] writing dependency_links to ../build/my_gripper_scripts/my_gripper_scripts.egg-info/dependency_links.txt
+[1.092s] writing entry points to ../build/my_gripper_scripts/my_gripper_scripts.egg-info/entry_points.txt
+[1.092s] writing requirements to ../build/my_gripper_scripts/my_gripper_scripts.egg-info/requires.txt
+[1.092s] writing top-level names to ../build/my_gripper_scripts/my_gripper_scripts.egg-info/top_level.txt
+[1.093s] reading manifest file '../build/my_gripper_scripts/my_gripper_scripts.egg-info/SOURCES.txt'
+[1.094s] writing manifest file '../build/my_gripper_scripts/my_gripper_scripts.egg-info/SOURCES.txt'
+[1.094s] running build
+[1.094s] running build_py
+[1.094s] running install
+[1.094s] running install_lib
+[1.095s] creating /home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages/my_gripper_scripts
+[1.095s] copying /home/benongnuel/dev_ws/build/my_gripper_scripts/build/lib/my_gripper_scripts/moveit_script.py -> /home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages/my_gripper_scripts
+[1.095s] copying /home/benongnuel/dev_ws/build/my_gripper_scripts/build/lib/my_gripper_scripts/__init__.py -> /home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages/my_gripper_scripts
+[1.095s] copying /home/benongnuel/dev_ws/build/my_gripper_scripts/build/lib/my_gripper_scripts/grip_and_lift.py -> /home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages/my_gripper_scripts
+[1.095s] byte-compiling /home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages/my_gripper_scripts/moveit_script.py to moveit_script.cpython-310.pyc
+[1.095s] byte-compiling /home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages/my_gripper_scripts/__init__.py to __init__.cpython-310.pyc
+[1.095s] byte-compiling /home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages/my_gripper_scripts/grip_and_lift.py to grip_and_lift.cpython-310.pyc
+[1.096s] running install_data
+[1.096s] copying resource/my_gripper_scripts -> /home/benongnuel/dev_ws/install/my_gripper_scripts/share/ament_index/resource_index/packages
+[1.096s] copying package.xml -> /home/benongnuel/dev_ws/install/my_gripper_scripts/share/my_gripper_scripts
+[1.096s] running install_egg_info
+[1.097s] Copying ../build/my_gripper_scripts/my_gripper_scripts.egg-info to /home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages/my_gripper_scripts-0.0.0-py3.10.egg-info
+[1.098s] running install_scripts
+[1.110s] writing list of installed files to '/home/benongnuel/dev_ws/build/my_gripper_scripts/install.log'
+[1.127s] Invoked command in '/home/benongnuel/dev_ws/my_gripper_scripts' returned '0': PYTHONPATH=/home/benongnuel/dev_ws/build/my_gripper_scripts/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/my_gripper_scripts build --build-base /home/benongnuel/dev_ws/build/my_gripper_scripts/build install --record /home/benongnuel/dev_ws/build/my_gripper_scripts/install.log --single-version-externally-managed install_data --force

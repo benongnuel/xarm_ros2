@@ -1,0 +1,1 @@
+/home/benongnuel/dev_ws/src/xarm_ros2/xarm_moveit_config/launch/robot_aircraft_sheet_gazebo.launch.py

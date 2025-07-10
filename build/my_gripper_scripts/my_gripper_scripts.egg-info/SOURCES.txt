@@ -1,0 +1,14 @@
+package.xml
+setup.cfg
+setup.py
+my_gripper_scripts/__init__.py
+my_gripper_scripts/grip_and_lift.py
+my_gripper_scripts/moveit_script.py
+my_gripper_scripts.egg-info/PKG-INFO
+my_gripper_scripts.egg-info/SOURCES.txt
+my_gripper_scripts.egg-info/dependency_links.txt
+my_gripper_scripts.egg-info/entry_points.txt
+my_gripper_scripts.egg-info/requires.txt
+my_gripper_scripts.egg-info/top_level.txt
+my_gripper_scripts.egg-info/zip-safe
+resource/my_gripper_scripts

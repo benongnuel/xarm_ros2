@@ -1,0 +1,16 @@
+[0.618s] Invoking command in '/home/benongnuel/dev_ws/build/my_gripper_scripts': PYTHONPATH=/home/benongnuel/dev_ws/build/my_gripper_scripts/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/benongnuel/dev_ws/build/my_gripper_scripts/build --no-deps symlink_data
+[0.772s] running develop
+[0.855s] running egg_info
+[0.856s] writing my_gripper_scripts.egg-info/PKG-INFO
+[0.856s] writing dependency_links to my_gripper_scripts.egg-info/dependency_links.txt
+[0.856s] writing entry points to my_gripper_scripts.egg-info/entry_points.txt
+[0.856s] writing requirements to my_gripper_scripts.egg-info/requires.txt
+[0.856s] writing top-level names to my_gripper_scripts.egg-info/top_level.txt
+[0.857s] reading manifest file 'my_gripper_scripts.egg-info/SOURCES.txt'
+[0.857s] writing manifest file 'my_gripper_scripts.egg-info/SOURCES.txt'
+[0.858s] running build_ext
+[0.858s] Creating /home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages/my-gripper-scripts.egg-link (link to .)
+[0.859s] 
+[0.859s] Installed /home/benongnuel/dev_ws/build/my_gripper_scripts
+[0.859s] running symlink_data
+[0.882s] Invoked command in '/home/benongnuel/dev_ws/build/my_gripper_scripts' returned '0': PYTHONPATH=/home/benongnuel/dev_ws/build/my_gripper_scripts/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/benongnuel/dev_ws/build/my_gripper_scripts/build --no-deps symlink_data

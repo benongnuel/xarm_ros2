@@ -1,0 +1,1 @@
+/home/benongnuel/dev_ws/build/xarm_msgs/ament_cmake_environment_hooks/pythonpath.sh

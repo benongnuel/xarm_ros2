@@ -1,0 +1,1 @@
+/home/benongnuel/dev_ws/src/xarm_ros2/xarm_sdk/cxx/include/xarm/core/xarm_config.h

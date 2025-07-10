@@ -1,0 +1,1 @@
+/home/benongnuel/dev_ws/build/xarm_msgs/rosidl_generator_py/xarm_msgs/msg/_robot_msg_s.c

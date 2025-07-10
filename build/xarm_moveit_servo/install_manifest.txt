@@ -1,0 +1,2 @@
+/home/benongnuel/dev_ws/install/xarm_moveit_servo/lib/libxarm_joystick_input.so
+/home/benongnuel/dev_ws/install/xarm_moveit_servo/lib/xarm_moveit_servo/xarm_keyboard_input

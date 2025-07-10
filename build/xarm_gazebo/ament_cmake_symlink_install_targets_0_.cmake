@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/benongnuel/dev_ws/build/xarm_gazebo/libgazebo_mimic_joint_plugin.so" "TARGETS" "gazebo_mimic_joint_plugin" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")

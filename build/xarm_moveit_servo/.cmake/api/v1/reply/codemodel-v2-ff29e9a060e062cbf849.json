@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-81290b5c5e0accf8ec0e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "xarm_moveit_servo",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-c149b9f36b55c346368a.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "xarm_joystick_input::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-xarm_joystick_input-1adfc7434f32b7c20f55.json",
+					"name" : "xarm_joystick_input",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "xarm_keyboard_input::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-xarm_keyboard_input-655fea56867f89de38b0.json",
+					"name" : "xarm_keyboard_input",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "xarm_moveit_servo_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-xarm_moveit_servo_uninstall-4a6afc800153ba300146.json",
+					"name" : "xarm_moveit_servo_uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/benongnuel/dev_ws/build/xarm_moveit_servo",
+		"source" : "/home/benongnuel/dev_ws/src/xarm_ros2/xarm_moveit_servo"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

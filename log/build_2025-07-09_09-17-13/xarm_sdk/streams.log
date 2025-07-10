@@ -1,0 +1,69 @@
+[0.022s] Invoking command in '/home/benongnuel/dev_ws/build/xarm_sdk': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/benongnuel/dev_ws/install/uf_ros_lib:/home/benongnuel/dev_ws/install/my_gripper_scripts:/opt/ros/humble /usr/bin/cmake /home/benongnuel/dev_ws/src/xarm_ros2/xarm_sdk -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/benongnuel/dev_ws/install/xarm_sdk
+[0.327s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.327s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.328s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[0.328s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.328s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.328s] -- Configured cppcheck include dirs: /home/benongnuel/dev_ws/src/xarm_ros2/xarm_sdk/cxx/include
+[0.328s] -- Configured cppcheck exclude dirs and/or files: 
+[0.328s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[0.328s] -- Configured cpplint exclude dirs and/or files: 
+[0.328s] -- Added test 'lint_cmake' to check CMake code style
+[0.328s] -- Added test 'uncrustify' to check C / C++ code style
+[0.328s] -- Configured uncrustify additional arguments: 
+[0.329s] -- Added test 'xmllint' to check XML markup files
+[0.329s] -- Configuring done
+[0.329s] -- Generating done
+[0.329s] -- Build files have been written to: /home/benongnuel/dev_ws/build/xarm_sdk
+[0.329s] Invoked command in '/home/benongnuel/dev_ws/build/xarm_sdk' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/benongnuel/dev_ws/install/uf_ros_lib:/home/benongnuel/dev_ws/install/my_gripper_scripts:/opt/ros/humble /usr/bin/cmake /home/benongnuel/dev_ws/src/xarm_ros2/xarm_sdk -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/benongnuel/dev_ws/install/xarm_sdk
+[0.330s] Invoking command in '/home/benongnuel/dev_ws/build/xarm_sdk': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/benongnuel/dev_ws/install/uf_ros_lib:/home/benongnuel/dev_ws/install/my_gripper_scripts:/opt/ros/humble /usr/bin/cmake --build /home/benongnuel/dev_ws/build/xarm_sdk -- -j16 -l16
+[0.360s] [35m[1mConsolidate compiler generated dependencies of target xarm_cxx_sdk[0m
+[0.397s] [100%] Built target xarm_cxx_sdk
+[0.411s] Invoked command in '/home/benongnuel/dev_ws/build/xarm_sdk' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/benongnuel/dev_ws/install/uf_ros_lib:/home/benongnuel/dev_ws/install/my_gripper_scripts:/opt/ros/humble /usr/bin/cmake --build /home/benongnuel/dev_ws/build/xarm_sdk -- -j16 -l16
+[0.412s] Invoking command in '/home/benongnuel/dev_ws/build/xarm_sdk': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/benongnuel/dev_ws/install/uf_ros_lib:/home/benongnuel/dev_ws/install/my_gripper_scripts:/opt/ros/humble /usr/bin/cmake --install /home/benongnuel/dev_ws/build/xarm_sdk
+[0.419s] -- Install configuration: ""
+[0.420s] -- Execute custom install script
+[0.420s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/share/xarm_sdk/environment/library_path.sh
+[0.428s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/share/xarm_sdk/environment/library_path.dsv
+[0.435s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/serial/impl/unix.h
+[0.442s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/serial/impl/win.h
+[0.449s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/serial/serial.h
+[0.461s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/serial/v8stdint.h
+[0.467s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/xarm/core/common/crc16.h
+[0.477s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/xarm/core/common/data_type.h
+[0.485s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/xarm/core/common/queue_memcpy.h
+[0.492s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/xarm/core/connect.h
+[0.502s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/xarm/core/debug/debug_print.h
+[0.511s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/xarm/core/instruction/servo3_config.h
+[0.519s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/xarm/core/instruction/uxbus_cmd.h
+[0.525s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/xarm/core/instruction/uxbus_cmd_config.h
+[0.530s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/xarm/core/instruction/uxbus_cmd_ser.h
+[0.536s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/xarm/core/instruction/uxbus_cmd_tcp.h
+[0.543s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/xarm/core/os/bak/thread.h
+[0.551s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/xarm/core/os/network.h
+[0.557s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/xarm/core/port/ser.h
+[0.564s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/xarm/core/port/socket.h
+[0.572s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/xarm/core/report_data.h
+[0.581s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/xarm/core/xarm_config.h
+[0.589s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/xarm/wrapper/common/timer.h
+[0.597s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/xarm/wrapper/common/utils.h
+[0.602s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/cxx/include/xarm/wrapper/xarm_api.h
+[0.608s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/lib/libxarm_cxx_sdk.so
+[0.616s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/share/ament_index/resource_index/package_run_dependencies/xarm_sdk
+[0.624s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/share/ament_index/resource_index/parent_prefix_path/xarm_sdk
+[0.630s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/share/xarm_sdk/environment/ament_prefix_path.sh
+[0.639s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/share/xarm_sdk/environment/ament_prefix_path.dsv
+[0.645s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/share/xarm_sdk/environment/path.sh
+[0.651s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/share/xarm_sdk/environment/path.dsv
+[0.659s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/share/xarm_sdk/local_setup.bash
+[0.666s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/share/xarm_sdk/local_setup.sh
+[0.674s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/share/xarm_sdk/local_setup.zsh
+[0.686s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/share/xarm_sdk/local_setup.dsv
+[0.699s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/share/xarm_sdk/package.dsv
+[0.714s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/share/ament_index/resource_index/packages/xarm_sdk
+[0.725s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/share/xarm_sdk/cmake/ament_cmake_export_libraries-extras.cmake
+[0.743s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/share/xarm_sdk/cmake/ament_cmake_export_include_directories-extras.cmake
+[0.751s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/share/xarm_sdk/cmake/xarm_sdkConfig.cmake
+[0.762s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/share/xarm_sdk/cmake/xarm_sdkConfig-version.cmake
+[0.768s] -- Symlinking: /home/benongnuel/dev_ws/install/xarm_sdk/share/xarm_sdk/package.xml
+[0.776s] Invoked command in '/home/benongnuel/dev_ws/build/xarm_sdk' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/benongnuel/dev_ws/install/uf_ros_lib:/home/benongnuel/dev_ws/install/my_gripper_scripts:/opt/ros/humble /usr/bin/cmake --install /home/benongnuel/dev_ws/build/xarm_sdk

@@ -1,0 +1,1 @@
+/home/benongnuel/dev_ws/build/xarm_msgs/rosidl_generator_cpp/xarm_msgs/srv/detail/robotiq_move__type_support.hpp

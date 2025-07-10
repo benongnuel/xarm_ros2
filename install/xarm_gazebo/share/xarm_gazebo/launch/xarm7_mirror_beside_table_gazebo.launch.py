@@ -1,0 +1,1 @@
+/home/benongnuel/dev_ws/src/xarm_ros2/xarm_gazebo/launch/xarm7_mirror_beside_table_gazebo.launch.py

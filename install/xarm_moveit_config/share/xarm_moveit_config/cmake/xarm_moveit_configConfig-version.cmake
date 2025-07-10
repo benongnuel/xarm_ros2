@@ -1,0 +1,1 @@
+/home/benongnuel/dev_ws/build/xarm_moveit_config/ament_cmake_core/xarm_moveit_configConfig-version.cmake

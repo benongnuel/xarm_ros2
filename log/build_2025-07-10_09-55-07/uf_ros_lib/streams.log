@@ -1,0 +1,16 @@
+[0.663s] Invoking command in '/home/benongnuel/dev_ws/build/uf_ros_lib': PYTHONPATH=/home/benongnuel/dev_ws/build/uf_ros_lib/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/benongnuel/dev_ws/install/uf_ros_lib/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/benongnuel/dev_ws/build/uf_ros_lib/build --no-deps symlink_data
+[0.824s] running develop
+[0.908s] running egg_info
+[0.908s] writing uf_ros_lib.egg-info/PKG-INFO
+[0.908s] writing dependency_links to uf_ros_lib.egg-info/dependency_links.txt
+[0.909s] writing entry points to uf_ros_lib.egg-info/entry_points.txt
+[0.909s] writing requirements to uf_ros_lib.egg-info/requires.txt
+[0.909s] writing top-level names to uf_ros_lib.egg-info/top_level.txt
+[0.910s] reading manifest file 'uf_ros_lib.egg-info/SOURCES.txt'
+[0.912s] writing manifest file 'uf_ros_lib.egg-info/SOURCES.txt'
+[0.914s] running build_ext
+[0.914s] Creating /home/benongnuel/dev_ws/install/uf_ros_lib/lib/python3.10/site-packages/uf-ros-lib.egg-link (link to .)
+[0.915s] 
+[0.915s] Installed /home/benongnuel/dev_ws/build/uf_ros_lib
+[0.915s] running symlink_data
+[0.951s] Invoked command in '/home/benongnuel/dev_ws/build/uf_ros_lib' returned '0': PYTHONPATH=/home/benongnuel/dev_ws/build/uf_ros_lib/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/benongnuel/dev_ws/install/uf_ros_lib/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/benongnuel/dev_ws/build/uf_ros_lib/build --no-deps symlink_data

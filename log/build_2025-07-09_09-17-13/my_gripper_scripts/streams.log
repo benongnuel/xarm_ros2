@@ -1,0 +1,18 @@
+[0.761s] Invoking command in '/home/benongnuel/dev_ws/build/my_gripper_scripts': PYTHONPATH=/home/benongnuel/dev_ws/build/my_gripper_scripts/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/benongnuel/dev_ws/build/my_gripper_scripts/build --no-deps symlink_data --force
+[0.905s] running develop
+[0.984s] running egg_info
+[0.984s] writing my_gripper_scripts.egg-info/PKG-INFO
+[0.985s] writing dependency_links to my_gripper_scripts.egg-info/dependency_links.txt
+[0.985s] writing entry points to my_gripper_scripts.egg-info/entry_points.txt
+[0.985s] writing requirements to my_gripper_scripts.egg-info/requires.txt
+[0.985s] writing top-level names to my_gripper_scripts.egg-info/top_level.txt
+[0.986s] reading manifest file 'my_gripper_scripts.egg-info/SOURCES.txt'
+[0.986s] writing manifest file 'my_gripper_scripts.egg-info/SOURCES.txt'
+[0.987s] running build_ext
+[0.987s] Creating /home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages/my-gripper-scripts.egg-link (link to .)
+[0.988s] 
+[0.988s] Installed /home/benongnuel/dev_ws/build/my_gripper_scripts
+[0.988s] running symlink_data
+[0.988s] symbolically linking /home/benongnuel/dev_ws/build/my_gripper_scripts/resource/my_gripper_scripts -> /home/benongnuel/dev_ws/install/my_gripper_scripts/share/ament_index/resource_index/packages
+[0.988s] symbolically linking /home/benongnuel/dev_ws/build/my_gripper_scripts/package.xml -> /home/benongnuel/dev_ws/install/my_gripper_scripts/share/my_gripper_scripts
+[1.009s] Invoked command in '/home/benongnuel/dev_ws/build/my_gripper_scripts' returned '0': PYTHONPATH=/home/benongnuel/dev_ws/build/my_gripper_scripts/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/benongnuel/dev_ws/build/my_gripper_scripts/build --no-deps symlink_data --force

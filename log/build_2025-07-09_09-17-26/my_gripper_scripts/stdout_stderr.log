@@ -1,0 +1,28 @@
+running develop
+Removing /home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages/my-gripper-scripts.egg-link (link to .)
+running egg_info
+writing ../build/my_gripper_scripts/my_gripper_scripts.egg-info/PKG-INFO
+writing dependency_links to ../build/my_gripper_scripts/my_gripper_scripts.egg-info/dependency_links.txt
+writing entry points to ../build/my_gripper_scripts/my_gripper_scripts.egg-info/entry_points.txt
+writing requirements to ../build/my_gripper_scripts/my_gripper_scripts.egg-info/requires.txt
+writing top-level names to ../build/my_gripper_scripts/my_gripper_scripts.egg-info/top_level.txt
+reading manifest file '../build/my_gripper_scripts/my_gripper_scripts.egg-info/SOURCES.txt'
+writing manifest file '../build/my_gripper_scripts/my_gripper_scripts.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+creating /home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages/my_gripper_scripts
+copying /home/benongnuel/dev_ws/build/my_gripper_scripts/build/lib/my_gripper_scripts/moveit_script.py -> /home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages/my_gripper_scripts
+copying /home/benongnuel/dev_ws/build/my_gripper_scripts/build/lib/my_gripper_scripts/__init__.py -> /home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages/my_gripper_scripts
+copying /home/benongnuel/dev_ws/build/my_gripper_scripts/build/lib/my_gripper_scripts/grip_and_lift.py -> /home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages/my_gripper_scripts
+byte-compiling /home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages/my_gripper_scripts/moveit_script.py to moveit_script.cpython-310.pyc
+byte-compiling /home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages/my_gripper_scripts/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages/my_gripper_scripts/grip_and_lift.py to grip_and_lift.cpython-310.pyc
+running install_data
+copying resource/my_gripper_scripts -> /home/benongnuel/dev_ws/install/my_gripper_scripts/share/ament_index/resource_index/packages
+copying package.xml -> /home/benongnuel/dev_ws/install/my_gripper_scripts/share/my_gripper_scripts
+running install_egg_info
+Copying ../build/my_gripper_scripts/my_gripper_scripts.egg-info to /home/benongnuel/dev_ws/install/my_gripper_scripts/lib/python3.10/site-packages/my_gripper_scripts-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/benongnuel/dev_ws/build/my_gripper_scripts/install.log'

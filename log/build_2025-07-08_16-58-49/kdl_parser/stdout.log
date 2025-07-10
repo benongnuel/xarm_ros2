@@ -1,0 +1,61 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+-- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+-- Found orocos_kdl_vendor: 0.2.5 (/opt/ros/humble/share/orocos_kdl_vendor/cmake)
+-- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+-- Found Eigen3: TRUE (found version "3.4.0") 
+-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+-- Found urdf: 2.6.1 (/opt/ros/humble/share/urdf/cmake)
+-- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: $<BUILD_INTERFACE:/home/benongnuel/dev_ws/src/kdl_parser/kdl_parser/include>
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'cpplint' to check C / C++ code against the Google style
+-- Configured cpplint exclude dirs and/or files: 
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/benongnuel/dev_ws/build/kdl_parser
+[ 50%] [32mBuilding CXX object CMakeFiles/kdl_parser.dir/src/kdl_parser.cpp.o[0m
+[100%] [32m[1mLinking CXX shared library libkdl_parser.so[0m
+[100%] Built target kdl_parser
+-- Install configuration: ""
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/lib/libkdl_parser.so
+-- Set runtime path of "/home/benongnuel/dev_ws/install/kdl_parser/lib/libkdl_parser.so" to ""
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/include/kdl_parser
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/include/kdl_parser/kdl_parser
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/include/kdl_parser/kdl_parser/visibility_control.hpp
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/include/kdl_parser/kdl_parser/kdl_parser.hpp
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/share/ament_index/resource_index/package_run_dependencies/kdl_parser
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/share/ament_index/resource_index/parent_prefix_path/kdl_parser
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/share/kdl_parser/environment/ament_prefix_path.sh
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/share/kdl_parser/environment/ament_prefix_path.dsv
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/share/kdl_parser/environment/path.sh
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/share/kdl_parser/environment/path.dsv
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/share/kdl_parser/local_setup.bash
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/share/kdl_parser/local_setup.sh
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/share/kdl_parser/local_setup.zsh
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/share/kdl_parser/local_setup.dsv
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/share/kdl_parser/package.dsv
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/share/ament_index/resource_index/packages/kdl_parser
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/share/kdl_parser/cmake/export_kdl_parserExport.cmake
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/share/kdl_parser/cmake/export_kdl_parserExport-noconfig.cmake
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/share/kdl_parser/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/share/kdl_parser/cmake/ament_cmake_export_targets-extras.cmake
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/share/kdl_parser/cmake/kdl_parserConfig.cmake
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/share/kdl_parser/cmake/kdl_parserConfig-version.cmake
+-- Installing: /home/benongnuel/dev_ws/install/kdl_parser/share/kdl_parser/package.xml
