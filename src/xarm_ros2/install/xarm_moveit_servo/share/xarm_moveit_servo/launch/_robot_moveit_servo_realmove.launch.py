@@ -1,0 +1,1 @@
+/home/benongnuel/dev_ws/src/xarm_ros2/xarm_moveit_servo/launch/_robot_moveit_servo_realmove.launch.py

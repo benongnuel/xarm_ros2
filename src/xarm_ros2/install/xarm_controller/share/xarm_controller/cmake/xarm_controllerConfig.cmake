@@ -1,0 +1,1 @@
+/home/benongnuel/dev_ws/src/xarm_ros2/build/xarm_controller/ament_cmake_core/xarm_controllerConfig.cmake

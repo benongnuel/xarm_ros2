@@ -1,0 +1,233 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-51f0eba0c5952eb8a18a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				},
+				{
+					"build" : "xarm_msgs__py",
+					"jsonFile" : "directory-xarm_msgs__py-50228d2d7711315bffce.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "/home/benongnuel/dev_ws/src/xarm_ros2/build/xarm_msgs/xarm_msgs__py",
+					"targetIndexes" : 
+					[
+						5
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1
+					],
+					"name" : "xarm_msgs",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_build_xarm_msgs_egg::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_build_xarm_msgs_egg-fdcc642eb458066dcdc8.json",
+					"name" : "ament_cmake_python_build_xarm_msgs_egg",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ament_cmake_python_symlink_xarm_msgs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ament_cmake_python_symlink_xarm_msgs-e61875448987f8bc0697.json",
+					"name" : "ament_cmake_python_symlink_xarm_msgs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-35fb0dce34f19b1cd6d9.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "xarm_msgs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-xarm_msgs-0ed6f83c1abaad215073.json",
+					"name" : "xarm_msgs",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "xarm_msgs__cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-xarm_msgs__cpp-9723581f4a4180530867.json",
+					"name" : "xarm_msgs__cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "xarm_msgs__py::@3449ca7dd1b9effcf93c",
+					"jsonFile" : "target-xarm_msgs__py-17ed06062071666214f0.json",
+					"name" : "xarm_msgs__py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "xarm_msgs__rosidl_generator_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-xarm_msgs__rosidl_generator_c-2ccee12403d0ba24d26c.json",
+					"name" : "xarm_msgs__rosidl_generator_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "xarm_msgs__rosidl_generator_py::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-xarm_msgs__rosidl_generator_py-565d54543480e394a5e4.json",
+					"name" : "xarm_msgs__rosidl_generator_py",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "xarm_msgs__rosidl_typesupport_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-xarm_msgs__rosidl_typesupport_c-e0ee199c76c3cee7f969.json",
+					"name" : "xarm_msgs__rosidl_typesupport_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "xarm_msgs__rosidl_typesupport_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-xarm_msgs__rosidl_typesupport_c__pyext-d6a6bfa923c024306a43.json",
+					"name" : "xarm_msgs__rosidl_typesupport_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "xarm_msgs__rosidl_typesupport_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-xarm_msgs__rosidl_typesupport_cpp-6ec096871d08a0cc75cb.json",
+					"name" : "xarm_msgs__rosidl_typesupport_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "xarm_msgs__rosidl_typesupport_fastrtps_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-xarm_msgs__rosidl_typesupport_fastrtps_c-d9f23b0c142d17c25ffd.json",
+					"name" : "xarm_msgs__rosidl_typesupport_fastrtps_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "xarm_msgs__rosidl_typesupport_fastrtps_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-xarm_msgs__rosidl_typesupport_fastrtps_c__pyext-387ebf5cb0a64e479c83.json",
+					"name" : "xarm_msgs__rosidl_typesupport_fastrtps_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "xarm_msgs__rosidl_typesupport_fastrtps_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-xarm_msgs__rosidl_typesupport_fastrtps_cpp-d92932dfe4c3af48f0de.json",
+					"name" : "xarm_msgs__rosidl_typesupport_fastrtps_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "xarm_msgs__rosidl_typesupport_introspection_c::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-xarm_msgs__rosidl_typesupport_introspection_c-3bbb65c8c037c164a4a3.json",
+					"name" : "xarm_msgs__rosidl_typesupport_introspection_c",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "xarm_msgs__rosidl_typesupport_introspection_c__pyext::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-xarm_msgs__rosidl_typesupport_introspection_c__pyext-129e9bac4d19c26138b0.json",
+					"name" : "xarm_msgs__rosidl_typesupport_introspection_c__pyext",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "xarm_msgs__rosidl_typesupport_introspection_cpp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-xarm_msgs__rosidl_typesupport_introspection_cpp-f2092dcdc85e96761070.json",
+					"name" : "xarm_msgs__rosidl_typesupport_introspection_cpp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "xarm_msgs_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-xarm_msgs_uninstall-0345898cca6287df0ee3.json",
+					"name" : "xarm_msgs_uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/benongnuel/dev_ws/src/xarm_ros2/build/xarm_msgs",
+		"source" : "/home/benongnuel/dev_ws/src/xarm_ros2/xarm_msgs"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

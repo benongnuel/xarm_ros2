@@ -1,0 +1,1 @@
+/home/benongnuel/dev_ws/src/xarm_ros2/xarm_moveit_config/launch/xarm5_moveit_fake.launch.py

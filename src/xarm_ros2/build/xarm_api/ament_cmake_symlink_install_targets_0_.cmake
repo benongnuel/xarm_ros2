@@ -1,0 +1,1 @@
+ament_cmake_symlink_install_targets("TARGET_FILES" "/home/benongnuel/dev_ws/src/xarm_ros2/build/xarm_api/libxarm_ros_driver.so" "/home/benongnuel/dev_ws/src/xarm_ros2/build/xarm_api/libxarm_ros_client.so" "TARGETS" "xarm_ros_driver" "xarm_ros_client" "ARCHIVE_DESTINATION" "lib" "LIBRARY_DESTINATION" "lib" "RUNTIME_DESTINATION" "bin")

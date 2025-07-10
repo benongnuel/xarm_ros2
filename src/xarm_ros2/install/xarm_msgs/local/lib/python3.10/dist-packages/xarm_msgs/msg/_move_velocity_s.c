@@ -1,0 +1,1 @@
+/home/benongnuel/dev_ws/src/xarm_ros2/build/xarm_msgs/rosidl_generator_py/xarm_msgs/msg/_move_velocity_s.c

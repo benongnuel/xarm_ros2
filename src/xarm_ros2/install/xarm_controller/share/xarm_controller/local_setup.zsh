@@ -1,0 +1,1 @@
+/home/benongnuel/dev_ws/src/xarm_ros2/build/xarm_controller/ament_cmake_environment_hooks/local_setup.zsh

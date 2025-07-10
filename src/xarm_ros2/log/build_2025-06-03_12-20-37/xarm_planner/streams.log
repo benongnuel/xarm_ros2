@@ -1,0 +1,153 @@
+[0.020s] Invoking command in '/home/benongnuel/dev_ws/src/xarm_ros2/build/xarm_planner': AMENT_PREFIX_PATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_moveit_config:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_gazebo:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_controller:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_api:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_sdk:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_description:/home/benongnuel/dev_ws/src/xarm_ros2/install/uf_ros_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_moveit_config:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_gazebo:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_controller:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_api:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_sdk:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_description:/home/benongnuel/dev_ws/install/xarm_planner:/home/benongnuel/dev_ws/install/xarm_moveit_servo:/home/benongnuel/dev_ws/install/xarm_moveit_config:/home/benongnuel/dev_ws/install/xarm_gazebo:/home/benongnuel/dev_ws/install/xarm_controller:/home/benongnuel/dev_ws/install/xarm_api:/home/benongnuel/dev_ws/install/xarm_sdk:/home/benongnuel/dev_ws/install/xarm_msgs:/home/benongnuel/dev_ws/install/xarm_description:/home/benongnuel/dev_ws/install/realsense_gazebo_plugin:/home/benongnuel/dev_ws/install/mbot_demo:/home/benongnuel/robo_ws/install/custom_3dof_arm:/home/benongnuel/dev_ws/install/uf_ros_lib:/home/benongnuel/dev_ws/install/my_gripper_scripts:/opt/ros/humble LD_LIBRARY_PATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_gazebo/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_controller/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_api/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_sdk/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs/local/lib/python3.10/dist-packages:/home/benongnuel/dev_ws/src/xarm_ros2/build/uf_ros_lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/uf_ros_lib/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake /home/benongnuel/dev_ws/src/xarm_ros2/xarm_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner
+[0.061s] -- The C compiler identification is GNU 11.4.0
+[0.100s] -- The CXX compiler identification is GNU 11.4.0
+[0.105s] -- Detecting C compiler ABI info
+[0.155s] -- Detecting C compiler ABI info - done
+[0.160s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.160s] -- Detecting C compile features
+[0.160s] -- Detecting C compile features - done
+[0.162s] -- Detecting CXX compiler ABI info
+[0.227s] -- Detecting CXX compiler ABI info - done
+[0.232s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.232s] -- Detecting CXX compile features
+[0.233s] -- Detecting CXX compile features - done
+[0.235s] -- Found ament_cmake: 1.3.11 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.337s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[0.377s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[0.401s] -- Found moveit: 2.5.9 (/opt/ros/humble/share/moveit/cmake)
+[0.402s] -- Found moveit_ros_planning_interface: 2.5.9 (/opt/ros/humble/share/moveit_ros_planning_interface/cmake)
+[0.533s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: date_time filesystem program_options system thread 
+[0.563s] -- Found rosidl_generator_c: 3.1.6 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.567s] -- Found rosidl_adapter: 3.1.6 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.573s] -- Found rosidl_generator_cpp: 3.1.6 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.581s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.593s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.719s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: chrono date_time filesystem iostreams program_options regex serialization system thread 
+[0.756s] -- Found parameter_traits: 0.4.0 (/opt/ros/humble/share/parameter_traits/cmake)
+[0.787s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.789s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.862s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.883s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.913s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.921s] -- Found Threads: TRUE  
+[0.950s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[0.952s] -- Found rclcpp_lifecycle: 16.0.12 (/opt/ros/humble/share/rclcpp_lifecycle/cmake)
+[0.968s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: filesystem 
+[1.040s] -- library: /usr/lib/x86_64-linux-gnu/libcurl.so
+[1.061s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[1.153s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread chrono 
+[1.173s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: thread system filesystem regex date_time program_options 
+[1.187s] -- Found Boost: /usr/lib/x86_64-linux-gnu/cmake/Boost-1.74.0/BoostConfig.cmake (found version "1.74.0") found components: system filesystem date_time program_options thread 
+[1.204s] -- Found xarm_msgs: 0.0.0 (/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs/share/xarm_msgs/cmake)
+[1.236s] -- Found ament_lint_auto: 0.12.12 (/opt/ros/humble/share/ament_lint_auto/cmake)
+[1.296s] -- Added test 'copyright' to check source files copyright and LICENSE
+[1.297s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[1.298s] -- Configured cppcheck include dirs: /home/benongnuel/dev_ws/src/xarm_ros2/xarm_planner/include
+[1.298s] -- Configured cppcheck exclude dirs and/or files: 
+[1.299s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[1.299s] -- Configured cpplint exclude dirs and/or files: 
+[1.299s] -- Added test 'flake8' to check Python code syntax and style conventions
+[1.300s] -- Added test 'lint_cmake' to check CMake code style
+[1.300s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[1.302s] -- Added test 'uncrustify' to check C / C++ code style
+[1.302s] -- Configured uncrustify additional arguments: 
+[1.302s] -- Added test 'xmllint' to check XML markup files
+[1.303s] -- Configuring done
+[1.366s] -- Generating done
+[1.390s] -- Build files have been written to: /home/benongnuel/dev_ws/src/xarm_ros2/build/xarm_planner
+[1.401s] Invoked command in '/home/benongnuel/dev_ws/src/xarm_ros2/build/xarm_planner' returned '0': AMENT_PREFIX_PATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_moveit_config:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_gazebo:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_controller:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_api:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_sdk:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_description:/home/benongnuel/dev_ws/src/xarm_ros2/install/uf_ros_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_moveit_config:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_gazebo:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_controller:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_api:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_sdk:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_description:/home/benongnuel/dev_ws/install/xarm_planner:/home/benongnuel/dev_ws/install/xarm_moveit_servo:/home/benongnuel/dev_ws/install/xarm_moveit_config:/home/benongnuel/dev_ws/install/xarm_gazebo:/home/benongnuel/dev_ws/install/xarm_controller:/home/benongnuel/dev_ws/install/xarm_api:/home/benongnuel/dev_ws/install/xarm_sdk:/home/benongnuel/dev_ws/install/xarm_msgs:/home/benongnuel/dev_ws/install/xarm_description:/home/benongnuel/dev_ws/install/realsense_gazebo_plugin:/home/benongnuel/dev_ws/install/mbot_demo:/home/benongnuel/robo_ws/install/custom_3dof_arm:/home/benongnuel/dev_ws/install/uf_ros_lib:/home/benongnuel/dev_ws/install/my_gripper_scripts:/opt/ros/humble LD_LIBRARY_PATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_gazebo/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_controller/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_api/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_sdk/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs/local/lib/python3.10/dist-packages:/home/benongnuel/dev_ws/src/xarm_ros2/build/uf_ros_lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/uf_ros_lib/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake /home/benongnuel/dev_ws/src/xarm_ros2/xarm_planner -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner
+[1.403s] Invoking command in '/home/benongnuel/dev_ws/src/xarm_ros2/build/xarm_planner': AMENT_PREFIX_PATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_moveit_config:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_gazebo:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_controller:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_api:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_sdk:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_description:/home/benongnuel/dev_ws/src/xarm_ros2/install/uf_ros_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_moveit_config:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_gazebo:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_controller:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_api:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_sdk:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_description:/home/benongnuel/dev_ws/install/xarm_planner:/home/benongnuel/dev_ws/install/xarm_moveit_servo:/home/benongnuel/dev_ws/install/xarm_moveit_config:/home/benongnuel/dev_ws/install/xarm_gazebo:/home/benongnuel/dev_ws/install/xarm_controller:/home/benongnuel/dev_ws/install/xarm_api:/home/benongnuel/dev_ws/install/xarm_sdk:/home/benongnuel/dev_ws/install/xarm_msgs:/home/benongnuel/dev_ws/install/xarm_description:/home/benongnuel/dev_ws/install/realsense_gazebo_plugin:/home/benongnuel/dev_ws/install/mbot_demo:/home/benongnuel/robo_ws/install/custom_3dof_arm:/home/benongnuel/dev_ws/install/uf_ros_lib:/home/benongnuel/dev_ws/install/my_gripper_scripts:/opt/ros/humble LD_LIBRARY_PATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_gazebo/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_controller/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_api/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_sdk/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs/local/lib/python3.10/dist-packages:/home/benongnuel/dev_ws/src/xarm_ros2/build/uf_ros_lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/uf_ros_lib/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/benongnuel/dev_ws/src/xarm_ros2/build/xarm_planner -- -j16 -l16
+[1.451s] [  9%] [32mBuilding CXX object CMakeFiles/test_xarm_planner_client_joint.dir/test/test_xarm_planner_client_joint.cpp.o[0m
+[1.451s] [  9%] [32mBuilding CXX object CMakeFiles/xarm_planner.dir/src/xarm_planner.cpp.o[0m
+[1.455s] [ 22%] [32mBuilding CXX object CMakeFiles/test_lite_gripper_realmove.dir/test/test_lite_gripper_realmove.cpp.o[0m
+[1.455s] [ 22%] [32mBuilding CXX object CMakeFiles/test_xarm_planner_client_pose.dir/test/test_xarm_planner_client_pose.cpp.o[0m
+[1.455s] [ 22%] [32mBuilding CXX object CMakeFiles/test_xarm_gripper_planner_client_joint.dir/test/test_xarm_gripper_planner_client_joint.cpp.o[0m
+[4.559s] [ 27%] [32m[1mLinking CXX executable test_xarm_planner_client_joint[0m
+[4.794s] [ 31%] [32m[1mLinking CXX executable test_xarm_gripper_planner_client_joint[0m
+[4.818s] [ 31%] Built target test_xarm_planner_client_joint
+[5.032s] [ 31%] Built target test_xarm_gripper_planner_client_joint
+[5.406s] [ 36%] [32m[1mLinking CXX executable test_lite_gripper_realmove[0m
+[5.515s] [ 40%] [32m[1mLinking CXX executable test_xarm_planner_client_pose[0m
+[5.578s] [ 40%] Built target test_lite_gripper_realmove
+[5.684s] [ 40%] Built target test_xarm_planner_client_pose
+[6.776s] [ 45%] [32m[1mLinking CXX shared library libxarm_planner.so[0m
+[6.895s] [ 45%] Built target xarm_planner
+[6.910s] [ 54%] [32mBuilding CXX object CMakeFiles/test_xarm_gripper_planner_api_joint.dir/test/test_xarm_gripper_planner_api_joint.cpp.o[0m
+[6.911s] [ 54%] [32mBuilding CXX object CMakeFiles/test_xarm_planner_api_pose.dir/test/test_xarm_planner_api_pose.cpp.o[0m
+[6.917s] [ 72%] [32mBuilding CXX object CMakeFiles/xarm_planner_node.dir/src/xarm_planner_node.cpp.o[0m
+[6.917s] [ 72%] [32mBuilding CXX object CMakeFiles/test_dual_xarm_planner_api_joint.dir/test/test_dual_xarm_planner_api_joint.cpp.o[0m
+[6.917s] [ 72%] [32mBuilding CXX object CMakeFiles/xarm_gripper_planner_node.dir/src/xarm_gripper_planner_node.cpp.o[0m
+[6.917s] [ 72%] [32mBuilding CXX object CMakeFiles/test_xarm_planner_api_joint.dir/test/test_xarm_planner_api_joint.cpp.o[0m
+[12.729s] [ 77%] [32m[1mLinking CXX executable test_xarm_planner_api_pose[0m
+[12.823s] [ 81%] [32m[1mLinking CXX executable test_xarm_planner_api_joint[0m
+[12.887s] [ 86%] [32m[1mLinking CXX executable test_xarm_gripper_planner_api_joint[0m
+[13.003s] [ 86%] Built target test_xarm_planner_api_pose
+[13.080s] [ 86%] Built target test_xarm_planner_api_joint
+[13.133s] [ 86%] Built target test_xarm_gripper_planner_api_joint
+[13.888s] [ 90%] [32m[1mLinking CXX executable xarm_gripper_planner_node[0m
+[14.160s] [ 90%] Built target xarm_gripper_planner_node
+[14.275s] [ 95%] [32m[1mLinking CXX executable test_dual_xarm_planner_api_joint[0m
+[14.462s] [ 95%] Built target test_dual_xarm_planner_api_joint
+[15.650s] [100%] [32m[1mLinking CXX executable xarm_planner_node[0m
+[15.937s] [100%] Built target xarm_planner_node
+[15.946s] Invoked command in '/home/benongnuel/dev_ws/src/xarm_ros2/build/xarm_planner' returned '0': AMENT_PREFIX_PATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_moveit_config:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_gazebo:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_controller:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_api:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_sdk:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_description:/home/benongnuel/dev_ws/src/xarm_ros2/install/uf_ros_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_moveit_config:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_gazebo:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_controller:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_api:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_sdk:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_description:/home/benongnuel/dev_ws/install/xarm_planner:/home/benongnuel/dev_ws/install/xarm_moveit_servo:/home/benongnuel/dev_ws/install/xarm_moveit_config:/home/benongnuel/dev_ws/install/xarm_gazebo:/home/benongnuel/dev_ws/install/xarm_controller:/home/benongnuel/dev_ws/install/xarm_api:/home/benongnuel/dev_ws/install/xarm_sdk:/home/benongnuel/dev_ws/install/xarm_msgs:/home/benongnuel/dev_ws/install/xarm_description:/home/benongnuel/dev_ws/install/realsense_gazebo_plugin:/home/benongnuel/dev_ws/install/mbot_demo:/home/benongnuel/robo_ws/install/custom_3dof_arm:/home/benongnuel/dev_ws/install/uf_ros_lib:/home/benongnuel/dev_ws/install/my_gripper_scripts:/opt/ros/humble LD_LIBRARY_PATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_gazebo/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_controller/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_api/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_sdk/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs/local/lib/python3.10/dist-packages:/home/benongnuel/dev_ws/src/xarm_ros2/build/uf_ros_lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/uf_ros_lib/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/benongnuel/dev_ws/src/xarm_ros2/build/xarm_planner -- -j16 -l16
+[15.948s] Invoking command in '/home/benongnuel/dev_ws/src/xarm_ros2/build/xarm_planner': AMENT_PREFIX_PATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_moveit_config:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_gazebo:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_controller:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_api:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_sdk:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_description:/home/benongnuel/dev_ws/src/xarm_ros2/install/uf_ros_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_moveit_config:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_gazebo:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_controller:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_api:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_sdk:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_description:/home/benongnuel/dev_ws/install/xarm_planner:/home/benongnuel/dev_ws/install/xarm_moveit_servo:/home/benongnuel/dev_ws/install/xarm_moveit_config:/home/benongnuel/dev_ws/install/xarm_gazebo:/home/benongnuel/dev_ws/install/xarm_controller:/home/benongnuel/dev_ws/install/xarm_api:/home/benongnuel/dev_ws/install/xarm_sdk:/home/benongnuel/dev_ws/install/xarm_msgs:/home/benongnuel/dev_ws/install/xarm_description:/home/benongnuel/dev_ws/install/realsense_gazebo_plugin:/home/benongnuel/dev_ws/install/mbot_demo:/home/benongnuel/robo_ws/install/custom_3dof_arm:/home/benongnuel/dev_ws/install/uf_ros_lib:/home/benongnuel/dev_ws/install/my_gripper_scripts:/opt/ros/humble LD_LIBRARY_PATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_gazebo/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_controller/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_api/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_sdk/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs/local/lib/python3.10/dist-packages:/home/benongnuel/dev_ws/src/xarm_ros2/build/uf_ros_lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/uf_ros_lib/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/benongnuel/dev_ws/src/xarm_ros2/build/xarm_planner
+[15.953s] -- Install configuration: ""
+[15.953s] -- Execute custom install script
+[15.953s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/include/xarm_planner/xarm_planner.h
+[15.961s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/lib/libxarm_planner.so
+[15.966s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/lib/xarm_planner/xarm_planner_node
+[15.971s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/lib/xarm_planner/xarm_gripper_planner_node
+[15.976s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/lib/xarm_planner/test_xarm_planner_api_joint
+[15.982s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/lib/xarm_planner/test_dual_xarm_planner_api_joint
+[15.987s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/lib/xarm_planner/test_xarm_planner_api_pose
+[15.994s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/lib/xarm_planner/test_xarm_gripper_planner_api_joint
+[16.001s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/lib/xarm_planner/test_xarm_planner_client_joint
+[16.008s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/lib/xarm_planner/test_xarm_planner_client_pose
+[16.014s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/lib/xarm_planner/test_xarm_gripper_planner_client_joint
+[16.020s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/lib/xarm_planner/test_lite_gripper_realmove
+[16.026s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/_dual_robot_planner.launch.py
+[16.035s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/_robot_planner.launch.py
+[16.043s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/lite6_planner_fake.launch.py
+[16.051s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/lite6_planner_gazebo.launch.py
+[16.057s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/lite6_planner_realmove.launch.py
+[16.063s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/test_dual_xarm_planner_api_joint.launch.py
+[16.069s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/test_lite_gripper_realmove.launch.py
+[16.078s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/test_move_group.launch.py
+[16.085s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/test_xarm_gripper_planner_api_joint.launch.py
+[16.092s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/test_xarm_gripper_planner_client_joint.launch.py
+[16.100s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/test_xarm_planner_api_joint.launch.py
+[16.108s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/test_xarm_planner_api_pose.launch.py
+[16.114s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/test_xarm_planner_client_joint.launch.py
+[16.122s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/test_xarm_planner_client_pose.launch.py
+[16.130s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/uf850_planner_fake.launch.py
+[16.136s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/uf850_planner_gazebo.launch.py
+[16.146s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/uf850_planner_realmove.launch.py
+[16.155s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/xarm5_planner_fake.launch.py
+[16.162s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/xarm5_planner_gazebo.launch.py
+[16.167s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/xarm5_planner_realmove.launch.py
+[16.175s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/xarm6_planner_fake.launch.py
+[16.183s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/xarm6_planner_gazebo.launch.py
+[16.191s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/xarm6_planner_realmove.launch.py
+[16.196s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/xarm7_mirror_planner_fake.launch.py
+[16.202s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/xarm7_mirror_planner_gazebo.launch.py
+[16.208s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/xarm7_mirror_planner_realmove.launch.py
+[16.216s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/xarm7_planner_fake.launch.py
+[16.222s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/xarm7_planner_gazebo.launch.py
+[16.227s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner//launch/xarm7_planner_realmove.launch.py
+[16.234s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/ament_index/resource_index/package_run_dependencies/xarm_planner
+[16.240s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/ament_index/resource_index/parent_prefix_path/xarm_planner
+[16.247s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner/environment/ament_prefix_path.sh
+[16.253s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner/environment/ament_prefix_path.dsv
+[16.260s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner/environment/path.sh
+[16.265s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner/environment/path.dsv
+[16.271s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner/local_setup.bash
+[16.278s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner/local_setup.sh
+[16.285s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner/local_setup.zsh
+[16.292s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner/local_setup.dsv
+[16.299s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner/package.dsv
+[16.307s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/ament_index/resource_index/packages/xarm_planner
+[16.314s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner/cmake/xarm_plannerConfig.cmake
+[16.320s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner/cmake/xarm_plannerConfig-version.cmake
+[16.326s] -- Symlinking: /home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_planner/share/xarm_planner/package.xml
+[16.333s] Invoked command in '/home/benongnuel/dev_ws/src/xarm_ros2/build/xarm_planner' returned '0': AMENT_PREFIX_PATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_moveit_config:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_gazebo:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_controller:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_api:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_sdk:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_description:/home/benongnuel/dev_ws/src/xarm_ros2/install/uf_ros_lib:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_moveit_config:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_gazebo:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_controller:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_api:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_sdk:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_description:/home/benongnuel/dev_ws/install/xarm_planner:/home/benongnuel/dev_ws/install/xarm_moveit_servo:/home/benongnuel/dev_ws/install/xarm_moveit_config:/home/benongnuel/dev_ws/install/xarm_gazebo:/home/benongnuel/dev_ws/install/xarm_controller:/home/benongnuel/dev_ws/install/xarm_api:/home/benongnuel/dev_ws/install/xarm_sdk:/home/benongnuel/dev_ws/install/xarm_msgs:/home/benongnuel/dev_ws/install/xarm_description:/home/benongnuel/dev_ws/install/realsense_gazebo_plugin:/home/benongnuel/dev_ws/install/mbot_demo:/home/benongnuel/robo_ws/install/custom_3dof_arm:/home/benongnuel/dev_ws/install/uf_ros_lib:/home/benongnuel/dev_ws/install/my_gripper_scripts:/opt/ros/humble LD_LIBRARY_PATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_gazebo/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_controller/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_api/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_sdk/lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/benongnuel/dev_ws/src/xarm_ros2/install/xarm_msgs/local/lib/python3.10/dist-packages:/home/benongnuel/dev_ws/src/xarm_ros2/build/uf_ros_lib:/home/benongnuel/dev_ws/src/xarm_ros2/install/uf_ros_lib/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/benongnuel/dev_ws/src/xarm_ros2/build/xarm_planner
